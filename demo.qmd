@@ -1,0 +1,50 @@
+---
+title: "Docker Model Runner Demo"
+author: "Rami Krispin"
+date: "5/22/2021"
+format: 
+  html:
+    code-fold: true
+---
+
+
+
+```{r}
+library(ellmer)
+```
+
+
+
+```{r}
+# base_url <- "http://localhost:12434/engines/v1"
+base_url <- "http://model-runner.docker.internal/engines/v1"
+```
+
+
+
+```{r}
+api_key <- "docker"
+```
+
+
+
+```{r}
+model <- "ai/llama3.2:latest"
+```
+
+
+```{r}
+chat <- chat_openai_compatible(
+  system_prompt = "You are a helpful AI assistant.",
+  base_url = base_url,
+  api_key = api_key,
+  model = model
+)
+```
+
+
+
+
+```{r}
+chat$chat("What is the capital of the United States of America?")
+```

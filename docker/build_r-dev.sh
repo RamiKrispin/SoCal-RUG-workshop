@@ -4,11 +4,11 @@ echo "Build the docker"
 
 # Parameters
 user_name="rkrispin"
-image_label="r-dev"
+image_label="socal-dmr-workshop"
 
 # Setting the image name
 ver=0.0.1
-docker_file=Dockerfile.r-dev
+docker_file=Dockerfile
 image_name=$user_name/$image_label:$ver
 
 echo "Image name: $image_name"
